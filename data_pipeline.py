@@ -106,10 +106,10 @@ class ExportPlugin(Protocol):
 class CSVPlugin:
     def process_output(self, data: list[tuple[int, str]]) -> None:
         values: list[str] = []
-        for rank, value in data:
+        for _, value in data:
             values.append(value)
         print("CSV Output:")
-        print(".join(values)")
+        print(",".join(values))
 
 
 class JSONPlugin:
